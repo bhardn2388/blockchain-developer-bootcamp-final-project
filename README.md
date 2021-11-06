@@ -1,14 +1,13 @@
-**Enforcement system workflow**
+**Online Farm Shop**
 
-1. The system will demonstrate two law enforcement agencies. For example POlice and Environment Agency.
-1. One law enforcement agency will use a JavaScript Form to submit a law violation.
-      1. The form will hold following information
-          1. Name of the law violator.
-          2. Email of the law violator.
-          3. Address
-          4. Phone
-          5. Details of violation.
-1. Once the information is submitted, the information is stored on blockchain.
-1. Second enforcement agency could use other systems like Microsoft's Dynamics 365. It will be intretsing to integrate blockchain with MS Dynamics.
-1. Each enforcement agency will be able to read records from blockchain and will be able to create new transactions.
+1. The farm shop will allow farmers to sell their produce directly to consumers.
+2. The farmers will be able to register themselves as sellers.
+3. The farmers will be able to list their produce.
+4. The farmer will be able to view all the orders.
+5. The farmer will be able to withdraw the funds once it processes the order.
+6. 8. The consumer is able to view all the produce available.
+9. The consumer is able to view all the farmers selling the produce and their reviews.
+7. The consumer will be able to register themselves.
+8. the consumer will be able to buy the produce.
+9. Consumer is able to give farmer a review.
 
