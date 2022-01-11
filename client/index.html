@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Online Farm Shop</title>
+
+    <!-- Bootstrap -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      main {
+        margin-top: 60px;
+      }
+
+      #content {
+        display: none;
+      }
+
+      form {
+        width: 350px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin-bottom: 0px;
+      }
+
+      #completedTaskList .content {
+        color: grey;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" target="_blank">Online Farm Shop</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap d-sm-block">
+          <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+        </li>
+      </ul>
+    </nav>
+    <br/><br/>  
+<!-- Tabs navs -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="regitserSeller-tab" data-bs-toggle="tab" data-bs-target="#regitserSeller" type="button" role="tab" aria-controls="regitserSeller" aria-selected="true" style="display: none;">Register Seller</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="AddProduce-tab" data-bs-toggle="tab" data-bs-target="#AddProduce" type="button" role="tab" aria-controls="AddProducts" aria-selected="false" style="display: none;">Add Products</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="BuyProduce-tab" data-bs-toggle="tab" data-bs-target="#BuyProduce" type="button" role="tab" aria-controls="BuyProduce" aria-selected="false">Buy Produce</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="myBoughtProduce-tab" data-bs-toggle="tab" data-bs-target="#myBoughtProduce" type="button" role="tab" aria-controls="myBoughtProduce" aria-selected="false" style="display : none;">My Orders</button>
+  </li>
+</ul>
+<!-- Tabs navs -->
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show" id="regitserSeller" role="tabpanel" aria-labelledby="home-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="loader" class="text-center">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content">
+            <div id="registerSeller" style="display: none">
+              <h4>Seller Registration</h4>
+                <form onSubmit="App.registerSeller(); return false;" id="sellerForm">
+                    <input id="sellerName" type="text" class="form-control" placeholder="Seller Name" required>
+                    <input id="sellerEmail" type="text" class="form-control" placeholder="Seller Email" required>
+                    <input id="sellerAddress" type="text" class="form-control" placeholder="Seller Postal Address" required>
+                    <input id="sellerPublicAddress" type="text" class="form-control" placeholder="Seller Public Address Key" required>                    
+                    <input type="submit" style="vertical-align: middle;">
+                </form>
+            </div>
+            <table class="table" id="sellerTable" style="display: none;">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Seller Name</th>
+                  <th scope="col">Seller Email</th>
+                  <th scope="col">Seller Address</th>
+                  <th scope="col">Seller Account</th>
+                  <th scope="col">Seller Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="AddProduce" role="tabpanel" aria-labelledby="addProducts-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="myProdcontent">
+            <form onSubmit="App.addSellerProduce(); return false;" id="ProductForm">
+              <input id="ProduceName" type="text" class="form-control" placeholder="Produce Name" required>
+              <input id="ProducePrice" type="text" class="form-control" placeholder="Price per KG in Ether" required>
+              <input id="Quantity" type="text" class="form-control" placeholder="Quantity Available(kg)" required>
+              <input type="submit">
+            </form>
+              <table class="table" id="MyProduceTable" style="display: none;">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produce Name</th>
+                    <th scope="col">Produce Price/KG (Ether)</th>
+                    <th scope="col">Produce Quantity (Kg)</th>
+                    <th scope="col">Seller</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+        </main>
+      </div>
+  </div>
+  </div>
+  <div class="tab-pane fade show active" id="BuyProduce" role="tabpanel" aria-labelledby="buyProduce-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="prodcontent">
+          <div id="registerCustomer" style="display: none">
+            <h4>Customer Registration</h4>
+            <form onSubmit="App.registerCustomer(); return false;" id="customerForm">
+              <input id="customerName" type="text" class="form-control" placeholder="Customer Name" required>
+              <input id="customerEmail" type="text" class="form-control" placeholder="Customer Email" required>
+              <input id="customerAddress" type="text" class="form-control" placeholder="Customer Address" required>
+              <input type="submit">
+            </form>
+          </div>
+            <div>
+              <table class="table" id="ProduceTable" style="display: none;">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produce Name</th>
+                    <th scope="col">Price/KG (Ether)</th>
+                    <th scope="col">Quantity Available (Kg)</th>
+                    <th scope="col">Seller</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              </div>
+            </div>
+        </main>
+      </div>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="myBoughtProduce" role="tabpanel" aria-labelledby="myBoughtProduce-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="myorders">
+            <div>              
+              <table class="table" id="MyOrdersTable" style="display: none;">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produce Name</th>
+                    <th scope="col">Price/KG (Ether)</th>
+                    <th scope="col">Quantity Bought (Kg)</th>
+                    <th scope="col">Seller</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              </div>
+            </div>
+        </main>
+      </div>
+  </div>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.min.js"></script>
+    <script src="vendor/@truffle/contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
