@@ -32163,6 +32163,12 @@
     "version": "0.8.11+commit.d7f03943.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x46Ca888c8e835f4BD3bb4885AD7Dc4642D1aF1eD",
+      "transactionHash": "0x622e377a5f3a97d8a74d9b50bb799205f2f1b1661aebaeee1dc5ddd8300c26b4"
+    },
     "5777": {
       "events": {
         "0xf2e9d29906d0733013800e4e6385226d9de46b7f6c649df584c679aa4039b5d5": {
@@ -32389,7 +32395,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-10T20:18:20.803Z",
+  "updatedAt": "2022-01-11T15:17:34.412Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Nishant Bhardwaj",

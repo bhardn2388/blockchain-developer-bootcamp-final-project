@@ -1,0 +1,3 @@
+Farmshop Contract Address: 0x46Ca888c8e835f4BD3bb4885AD7Dc4642D1aF1eD
+Security Contract Address: 0x153b406D29c55B545777B20b5956AeabA14Ea183
+Netwrok: Ropsten
