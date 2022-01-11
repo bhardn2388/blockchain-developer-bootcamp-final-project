@@ -60,6 +60,9 @@
     <button class="nav-link" id="AddProduce-tab" data-bs-toggle="tab" data-bs-target="#AddProduce" type="button" role="tab" aria-controls="AddProducts" aria-selected="false" style="display: none;">Add Products</button>
   </li>
   <li class="nav-item" role="presentation">
+    <button class="nav-link" id="SellerOrders-tab" data-bs-toggle="tab" data-bs-target="#SellerOrders" type="button" role="tab" aria-controls="SellerOrders" aria-selected="false" style="display: none;">Orders</button>
+  </li>
+  <li class="nav-item" role="presentation">
     <button class="nav-link active" id="BuyProduce-tab" data-bs-toggle="tab" data-bs-target="#BuyProduce" type="button" role="tab" aria-controls="BuyProduce" aria-selected="false">Buy Produce</button>
   </li>
   <li class="nav-item" role="presentation">
@@ -129,6 +132,30 @@
                 <tbody>
                 </tbody>
               </table>
+            </div>
+        </main>
+      </div>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="SellerOrders" role="tabpanel" aria-labelledby="SellerOrders-tab">
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="sellerorders">
+            <div>              
+              <table class="table" id="SellerOrdersTable" style="display: none;">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produce Name</th>
+                    <th scope="col">Price/KG (Ether)</th>
+                    <th scope="col">Quantity Bought (Kg)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              </div>
             </div>
         </main>
       </div>

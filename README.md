@@ -1,4 +1,4 @@
-**Online Farm Shop**
+# Online Farm shop
 ## Project Description
 1. The farm shop will allow farmers to sell their produce directly to consumers.
 2. The farmers are registered by the admins as sellers.
@@ -15,12 +15,16 @@
 ### Customer Registration
 1. Any user can register as a customer.
 2. Once registered, a customer can buy produce that have been added by the sellers.
-3. The customer add the quantity required and click buy.
-4. The app calculates the price they need to pay and deducts from thier account and transfers to the seller's account.
-5. The customers can see thier order in the My orders tab.
+### Buying Produce
+1. Buy Produce Tab appears.
+2. The customer add the quantity required and clicks buy.
+3. The app calculates the price they need to pay and deducts from thier account and transfers to the seller's account.
+4. The customers can see thier order in the My orders tab.
+5. Seller sees all orders under the Orders tab.
 
 ## Directory Structure
 1. client: front-end files
 2. build/contracts: ABI files
 3. contracts: smart contracts
-4. test: test javascript file
+4. migrations: Migration files for deploying the smart contracts
+5. test: test javascript file

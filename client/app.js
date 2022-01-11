@@ -87,6 +87,9 @@ App = {
       $('#BuyProduce').attr('class','tab-pane fade');
       // Render My Produce
       await App.renderMyProduce();
+
+      $('#SellerOrders-tab').show();
+      await App.renderSellerOrders();   
     } else {
       $('#AddProduce-tab').hide();
       $('#AddProduce-tab').attr('aria-selected',false);
@@ -260,6 +263,39 @@ App = {
           '</td><td>' +
           produceSeller +
           '</td></tr>';
+
+        // Put the produce in the correct list
+        ordersTableBody.append(produceRow);
+      }
+    }
+    ordersTable.show();
+  },
+  renderSellerOrders: async () => {
+    // Load the total produce count from the blockchain
+    const orderCount = await App.farmshop.orderCount();
+    const ordersTable = $('#SellerOrdersTable');
+    const ordersTableBody = $('#SellerOrdersTable tbody');
+    // Render out each produce
+    for (var i = 1; i <= orderCount; i++) {
+      // Fetch the resgistered seller data from the blockchain
+      const orderProduce = await App.farmshop.customerOrders(i);
+      const orderSeller = orderProduce.seller;
+      if (App.currAccount == orderSeller.toString().toLowerCase()) {
+        const produceName = orderProduce.produceName;
+        const producePrice = orderProduce.pricePaid / 1000000000000000000;
+        const produceQuantity = orderProduce.quantityBought.toString();
+
+        // Create the html for the produce
+        const produceRow =
+          '<tr><td>' +
+          i +
+          '</td><td>' +
+          produceName +
+          '</td><td>' +
+          producePrice +
+          '</td><td>' +
+          produceQuantity +
+          '</td><td>' ;
 
         // Put the produce in the correct list
         ordersTableBody.append(produceRow);
