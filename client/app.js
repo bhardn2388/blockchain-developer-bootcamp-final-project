@@ -359,17 +359,17 @@ App = {
     const loader = $('#loader');
     const content = $('#content');
     const myProdcontent = $('#myProdcontent');
-    const Prodcontent = $('#Prodcontent');
+    const BuyCustomerProduce = $('#BuyCustomerProduce');
     if (boolean) {
       loader.show();
       content.hide();
       myProdcontent.hide();
-      Prodcontent.hide();
+      BuyCustomerProduce.hide();
     } else {
       loader.hide();
       content.show();
       myProdcontent.show();
-      Prodcontent.show();
+      BuyCustomerProduce.show();
     }
   },
 };

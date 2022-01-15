@@ -24,6 +24,9 @@
 4. run command npm run dev
 5. This opens http://localhost:3000/
 
+## Public Deployed URL
+https://bhard-farmshop-92fe57.netlify.app/
+
 ## Project Description
 1. The farm shop will allow farmers to sell their produce directly to consumers.
 2. The farmers are registered by the admins as sellers.
