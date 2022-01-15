@@ -8,6 +8,8 @@
   },
   "scripts": {
     "dev": "lite-server",
+    "start": "netlify dev",
+    "build": "mkdir -p dist && cp -R client/* dist/ && cp -R build/contracts/* dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
