@@ -27,6 +27,9 @@
 ## Public Deployed URL
 https://bhard-farmshop-92fe57.netlify.app/
 
+## Screen Cast Link
+https://youtu.be/0fHMjqBXw8A 
+
 ## Project Description
 1. The farm shop will allow farmers to sell their produce directly to consumers.
 2. The farmers are registered by the admins as sellers.
@@ -56,3 +59,9 @@ https://bhard-farmshop-92fe57.netlify.app/
 3. contracts: smart contracts
 4. migrations: Migration files for deploying the smart contracts
 5. test: test javascript file
+
+## Ropsetn Configuration
+1. Create .env file in base directory
+2. add two variables below:
+   1. INFURA_API_KEY=""
+   2. MNEMONIC=""
