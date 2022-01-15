@@ -1,4 +1,29 @@
 # Online Farm shop
+
+## Prerequisites
+1. Node.js >= v14
+2. Truffle
+3. Ganache
+4. npm
+5. git
+
+### Installing Node Modules
+1. Run npm install
+2. All node modules are installed
+3. package-lock.json created
+
+### Contracts
+1. Run local testnet in port 8545 and host 127.0.0.1 in Ganache
+2. truffle migrate --network development
+3. To run test run truffle test
+
+### Frontend
+1. Front end files in the client folder.
+2. Running tests requires lite server which is installed as part of node modules.
+3. bs-config.json contains configuration for lite server.
+4. run command npm run dev
+5. This opens http://localhost:3000/
+
 ## Project Description
 1. The farm shop will allow farmers to sell their produce directly to consumers.
 2. The farmers are registered by the admins as sellers.
